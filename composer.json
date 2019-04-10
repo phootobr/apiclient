@@ -1,0 +1,21 @@
+{
+    "name": "phooto-br/apiclient",
+    "description": "",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "fontebasso",
+            "email": "samuel.fonte@phooto.com.br"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Phooto\\APIClient\\": "src"
+        }
+    },
+    "require": {
+        "guzzlehttp/guzzle": "^6.3",
+        "symfony/http-foundation": "^4.2"
+    }
+}
