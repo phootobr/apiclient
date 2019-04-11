@@ -8,7 +8,7 @@ class Config
 
     public function __construct($name)
     {
-        $this->config = require "../config/{$name}.php";
+        $this->config = require __DIR__ . "/../config/{$name}.php";
     }
 
     public function getValue($index)
