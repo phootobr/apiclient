@@ -11,7 +11,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Phooto\\APIClient\\": "src"
+            "PhootoBR\\APIClient\\": "src"
         }
     },
     "minimum-stability": "dev",

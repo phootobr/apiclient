@@ -1,6 +1,6 @@
 <?php
 
-namespace Phooto\APIClient\Http;
+namespace PhootoBR\APIClient;
 
 use GuzzleHttp\Exception\RequestException;
 use Phooto\APIClient\Config;
