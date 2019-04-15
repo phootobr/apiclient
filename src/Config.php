@@ -1,6 +1,6 @@
 <?php
 
-namespace Phooto\APIClient;
+namespace PhootoBR\APIClient;
 
 class Config
 {
