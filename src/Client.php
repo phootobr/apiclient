@@ -3,7 +3,6 @@
 namespace PhootoBR\APIClient;
 
 use GuzzleHttp\Exception\RequestException;
-use Phooto\APIClient\Config;
 use GuzzleHttp\Client as HttpClient;
 
 class Client
