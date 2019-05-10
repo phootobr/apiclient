@@ -57,6 +57,7 @@ class Client
                 break;
             case 'PUT':
                 $options['json'] = $data;
+                break;
         }
 
         return $this->httpClient->request($method, $uri, $options);
