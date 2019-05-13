@@ -2,6 +2,7 @@
 
 namespace PhootoBR\APIClient;
 
+use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Client as HttpClient;
 
@@ -28,7 +29,7 @@ class Client
     public function __call($method, $args)
     {
         try {
-            $response = $this->execRequest(strtoupper($method), $this->baseUri . $args[0], $args[1]);
+            $response = $this->execRequest(strtoupper($method), $this->baseUri . $args[0], ($args[1] ?? []));
             return json_decode($response->getBody(), true);
         } catch (RequestException $e) {
             return [
@@ -60,7 +61,11 @@ class Client
                 break;
         }
 
-        return $this->httpClient->request($method, $uri, $options);
+        try {
+            return $this->httpClient->request($method, $uri, $options);
+        } catch (ClientException $e) {
+            return $e->getResponse();
+        }
     }
 
     private function getAccessToken()
