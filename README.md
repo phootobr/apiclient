@@ -14,7 +14,7 @@ This library provides access to Phooto Brasil's REST API
 ## Usage
 
 ```php
-$apiClient = new \PhootoBR\APIClient\Client("{YOUR_CLIENT_ID}", "{YOUR_SECRET_ID}", "{SERVICE}");
+$apiClient = new \PhootoBR\APIClient\Client("{YOUR_CLIENT_ID}", "{YOUR_SECRET_ID}", "{SERVICE}", "{SANDBOX_MODE|true/false}");
 
 $data = [
     "hello" => "world",

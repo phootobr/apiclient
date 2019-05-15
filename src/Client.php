@@ -15,7 +15,7 @@ class Client
     private $httpClient;
     private $baseUri;
 
-    public function __construct($clientId, $clientSecret, $service)
+    public function __construct($clientId, $clientSecret, $service, $sandbox = true)
     {
         $this->clientId = $clientId;
         $this->clientSecret = $clientSecret;
@@ -23,7 +23,10 @@ class Client
         $this->httpClient = new HttpClient();
 
         $this->config = new Config('services');
-        $this->baseUri = $this->config->getValue($service);
+        $this->baseUri = $sandbox
+            ? (str_replace('https://', 'https://sandbox.', $this->config->getValue($service)))
+            : $this->config->getValue($service)
+        ;
     }
 
     public function __call($method, $args)
@@ -81,7 +84,7 @@ class Client
                 ]
             ]
         );
-        if($response->getStatusCode() === 200) {
+        if ($response->getStatusCode() === 200) {
             $body = json_decode($response->getBody());
             return $body->access_token;
         } else {
