@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.3.2
+
+- Fix service recurrence engine url
+
 ## v1.3.1
 
 - Recurrence engine service config sandbox
