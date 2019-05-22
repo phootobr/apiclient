@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.3.0
+
+### Added
+
+- Recurrence engine service config
+
 ## v1.2.0
 
 ### Added
